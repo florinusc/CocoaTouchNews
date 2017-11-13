@@ -10,6 +10,14 @@ import UIKit
 
 class FeedCell: UICollectionViewCell {
     
+    var item: Item? {
+        didSet {
+            titleLabel.text = item?.title
+            descriptionView.text = item?.summary
+        }
+    }
+    
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionView: UITextView!
     

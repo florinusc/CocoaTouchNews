@@ -13,10 +13,15 @@ class FeedViewController: UICollectionViewController {
 
     var items: [Item] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         
         DispatchQueue.global().async {
             self.requestData()
@@ -66,8 +71,10 @@ class FeedViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedCell", for: indexPath) as! FeedCell
         
-        cell.titleLabel.text = items[indexPath.row].title
-        cell.descriptionView.text = items[indexPath.row].summary
+        cell.item = items[indexPath.row]
+//        
+//        cell.titleLabel.text = items[indexPath.row].title
+//        cell.descriptionView.text = items[indexPath.row].summary
         
         return cell
     }

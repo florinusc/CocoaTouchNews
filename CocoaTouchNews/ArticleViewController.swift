@@ -8,13 +8,8 @@
 
 import UIKit
 import Kanna
+import SafariServices
 
-
-struct Article {
-    var name: String
-    var category: String
-    var link: String
-}
 
 class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -32,7 +27,11 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    let testString = "<p>Hey</p>"
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        navigationController?.isNavigationBarHidden = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,16 +47,15 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
             for link in doc.xpath("//h2 | //strong/a") {
                 
                 if link["href"] == nil {
-                    print("header " + link.text!)
                     
                     if currentHeader != link.text {
-                        currentHeader = link.text!
-                        categories.append(link.text!)
+                        if link.text != "As always…" {
+                            currentHeader = link.text!
+                            categories.append(link.text!)
+                        }
                     }
                     
                 } else {
-                    print(link["href"] ?? "")
-                    
                     articles.append(Article(name: link.text!, category: currentHeader, link: link["href"]!))
                     
                 }
@@ -65,12 +63,6 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             
         }
-        
-        DispatchQueue.main.async {
-            print(self.categories)
-            self.tableView.reloadData()
-        }
-        
     }
     
     
@@ -116,17 +108,11 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         selectedURL = selectedArticle.link
         
-        performSegue(withIdentifier: "goToWeb", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToWeb" {
-            let dest = segue.destination as! WebViewController
-            
-            dest.urlString = selectedURL
-            
+        if let url = URL(string: selectedURL) {
+            let svc = SFSafariViewController(url: url)
+            self.present(svc, animated: true, completion: nil)
         }
+        
     }
-    
 
 }

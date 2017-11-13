@@ -16,7 +16,6 @@
 		9F4A7E6E1FB1AD3C00203566 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A7E6D1FB1AD3C00203566 /* Model.swift */; };
 		9F4A7E701FB1AF4E00203566 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A7E6F1FB1AF4E00203566 /* FeedCell.swift */; };
 		9F4A7E721FB1B36A00203566 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4A7E711FB1B36A00203566 /* ArticleViewController.swift */; };
-		9FA3366D1FB2F3B900AEDFA1 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA3366C1FB2F3B900AEDFA1 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +31,6 @@
 		9F4A7E6D1FB1AD3C00203566 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		9F4A7E6F1FB1AF4E00203566 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		9F4A7E711FB1B36A00203566 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
-		9FA3366C1FB2F3B900AEDFA1 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C33CB2971FFEE39FF956AA7E /* Pods-CocoaTouchNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaTouchNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaTouchNews/Pods-CocoaTouchNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,11 +78,10 @@
 			children = (
 				9F4A7E5B1FB1A7F800203566 /* AppDelegate.swift */,
 				9F4A7E5D1FB1A7F800203566 /* FeedViewController.swift */,
+				9F4A7E6F1FB1AF4E00203566 /* FeedCell.swift */,
+				9F4A7E711FB1B36A00203566 /* ArticleViewController.swift */,
 				9F4A7E6D1FB1AD3C00203566 /* Model.swift */,
 				9F4A7E5F1FB1A7F800203566 /* Main.storyboard */,
-				9F4A7E711FB1B36A00203566 /* ArticleViewController.swift */,
-				9FA3366C1FB2F3B900AEDFA1 /* WebViewController.swift */,
-				9F4A7E6F1FB1AF4E00203566 /* FeedCell.swift */,
 				9F4A7E621FB1A7F800203566 /* Assets.xcassets */,
 				9F4A7E641FB1A7F800203566 /* LaunchScreen.storyboard */,
 				9F4A7E671FB1A7F800203566 /* Info.plist */,
@@ -230,7 +227,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F4A7E6E1FB1AD3C00203566 /* Model.swift in Sources */,
-				9FA3366D1FB2F3B900AEDFA1 /* WebViewController.swift in Sources */,
 				9F4A7E701FB1AF4E00203566 /* FeedCell.swift in Sources */,
 				9F4A7E721FB1B36A00203566 /* ArticleViewController.swift in Sources */,
 				9F4A7E5E1FB1A7F800203566 /* FeedViewController.swift in Sources */,

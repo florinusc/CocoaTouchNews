@@ -29,3 +29,9 @@ struct Item: Decodable {
         var avatar: String
     }
 }
+
+struct Article {
+    var name: String
+    var category: String
+    var link: String
+}
