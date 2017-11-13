@@ -1,2 +1,2 @@
 # CocoaTouchNews
-Simple iOS app that displays CocoaTouchNews feed and articles
+Simple iOS app that displays Weekly Cocoa Newsletter feed and articles
